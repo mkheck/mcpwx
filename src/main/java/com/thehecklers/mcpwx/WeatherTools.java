@@ -28,8 +28,6 @@ public class WeatherTools {
 //    }
 
         var request = HttpRequest.newBuilder()
-                //.uri(URI.create(url + "/" + location.replaceAll(" ", "&nbsp") + "/EN"))
-                //.uri(URI.create(url + "?city=" + location.replaceAll(" ", "&nbsp") + "&lang=EN"))
                 .uri(URI.create("%s?city=%s&lang=EN".formatted(url, location.replaceAll(" ", "%20"))))
                 .header("X-RapidAPI-Key", key)
                 .header("X-RapidAPI-Host", host)
